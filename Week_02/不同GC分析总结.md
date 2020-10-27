@@ -4,7 +4,7 @@
    
      java -XX:+UseSerialGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
    
-     ![image-20201027230942546](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201027230942546.png)
+     image-20201027230942546
    
      java -XX:+UseParallelGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
    
@@ -76,7 +76,7 @@
 
      ![image-20201028001755370](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201028001755370.png)
 
-     总结：并行GC配置RPS最高，串行GC配置RPS最低，并行GC，CMSGC和G1GC平均时间差不多
+     总结：并行GC
 
 
 
