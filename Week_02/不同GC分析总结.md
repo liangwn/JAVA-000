@@ -4,7 +4,7 @@
    
      java -XX:+UseSerialGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
    
-     image-20201027230942546
+     ![image-20201027230942546](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201027230942546.png)
    
      java -XX:+UseParallelGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
    
@@ -76,7 +76,7 @@
 
      ![image-20201028001755370](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201028001755370.png)
 
-     总结：并行GC
+     总结：并行GC配置RPS最高，串行GC配置RPS最低，并行GC，CMS和G1GC的RPS差不多平均时间在0.1ms。
 
 
 
