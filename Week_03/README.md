@@ -1,7 +1,16 @@
 学习笔记
 
-![image-20201101191810042](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201101191810042.png)
+Netty运行原理
 
-![image-20201101191832757](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201101191832757.png)
+![](README.assets/image-20201101191810042.png)
 
-![image-20201101191856813](C:\Users\liang\AppData\Roaming\Typora\typora-user-images\image-20201101191856813.png)
+![image-20201101201058009](README.assets/image-20201101201058009.png)
+
+
+
+![image-20201101201136730](README.assets/image-20201101201136730.png)
+
+DSL
+
+DSL(Domain Specified Language)领域专用语言
+
