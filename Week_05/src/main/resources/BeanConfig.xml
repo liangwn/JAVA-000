@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student1" class="io.liangwn.spring.bean.MyStudent">
+        <property name="id" value="1"/>
+        <property name="name" value="Tom"/>
+    </bean>
+
+    <bean id="student2" class="io.liangwn.spring.bean.MyStudent">
+        <property name="id" value="2"/>
+        <property name="name" value="Jerry"/>
+    </bean>
+
+    <bean id="student3" class="io.liangwn.spring.bean.MyStudent">
+        <property name="id" value="3"/>
+        <property name="name" value="Mary"/>
+    </bean>
+
+    <bean id="klass" class="io.liangwn.spring.bean.Klass">
+        <property name="myStudentList">
+            <list>
+                <ref bean="student1"/>
+                <ref bean="student2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="klass2" class="io.liangwn.spring.bean.Klass">
+        <property name="myStudentList">
+            <list>
+                <ref bean="student3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="mySchool" class="io.liangwn.spring.bean.School">
+        <property name="klassList">
+            <list>
+                <ref bean="klass"/>
+                <ref bean="klass2"/>
+            </list>
+        </property>
+
+    </bean>
+</beans>
