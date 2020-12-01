@@ -1,39 +1,43 @@
-CREATE TABLE user
-(
-	id bigint(20) auto_increment comment '主键' primary key,
-	create_time datetime comment '创建时间',
-	update_time datetime comment '更新时间',
-	mobile varchar(11) unique comment '手机号',
-	email varchar(64) comment '邮箱',
-	nick_name varchar(64) comment '昵称'
-)
-comment '用户表';
+CREATE TABLE `user` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'pk',
+	`username` varchar(64) COMMENT '用户姓名',
+	`password` varchar(64) COMMENT '用户密码',
+	`gender` char(1) COMMENT '性别',
+	`cellphone` char(11) COMMENT '手机号',
+	`address` varchar(1024) COMMENT '地址',
+	`creator` varchar(32) NOT NULL DEFAULT 'system' COMMENT '创建人',
+	`gmt_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`modifier` varchar(32) NOT NULL DEFAULT 'system' COMMENT '修改人',
+	`gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+	`is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '是否删除【N-否,Y-是】',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
-CREATE TABLE product
-(
-	id bigint(20) auto_increment comment '主键' primary key,
-	create_time datetime comment '创建时间',
-	update_time datetime comment '更新时间',
-	display_name varchar(128) comment '名称'
-	detail varchar(256) comment '简介'
-	on_sale tinyint(1) comment '是否在售',
-	original_price decimal(10,2) comment '原价'
-	img_url varchar(256) comment '图片地址'
-)
-comment '商品表';
+CREATE TABLE `good` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'pk',
+	`goodname` varchar(64) COMMENT '商品名称',
+	`price` decimal(13,0) COMMENT '商品价格',
+	`count` bigint(20) COMMENT '商品数量',
+	`creator` varchar(32) NOT NULL DEFAULT 'system' COMMENT '创建人',
+	`gmt_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`modifier` varchar(32) NOT NULL DEFAULT 'system' COMMENT '修改人',
+	`gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+	`is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '是否删除【N-否,Y-是】',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
 
-CREATE TABLE order
-(
-	id bigint(20) auto_increment comment '主键' primary key,
-	create_time datetime comment '创建时间',
-	update_time datetime comment '更新时间',
-	order_no varchar(24) comment '订单号',
-	user_id bigint(20) comment '下单用户id',
-	product_id bigint(20) comment '商品id',
-	pay_amount int(11) comment '支付金额'，
-	original_amount int(11) comment '原价金额',
-	discount_amount int(11) comment '折扣金额',
-	order_status smallint(6) comment '订单状态',
-	expire_time datetime comment '订单过期时间'
-)
-comment '订单表';
+CREATE TABLE `order` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'pk',
+	`username` varchar(64) COMMENT '用户姓名',
+	`goodname` varchar(64) COMMENT '商品名称',
+	`price` decimal(13,0) COMMENT '商品价格',
+	`count` bigint(20) COMMENT '商品数量',
+	`cellphone` char(11) COMMENT '手机号',
+	`address` varchar(1024) COMMENT '地址',
+	`creator` varchar(32) NOT NULL DEFAULT 'system' COMMENT '创建人',
+	`gmt_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`modifier` varchar(32) NOT NULL DEFAULT 'system' COMMENT '修改人',
+	`gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+	`is_deleted` char(1) NOT NULL DEFAULT 'N' COMMENT '是否删除【N-否,Y-是】',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
